@@ -21,9 +21,17 @@
 1. 내부인들의 얼굴과 정맥 정보 등을 데이터베이스에서 불러 올 수 있는 RF카드 발급 후, 건물 출입 시에 RF카드를 리더기에 태깅하여 신원파악.
 2. 
 
-## 모델링
+## 🌠프로젝트 일정
 
-## 성능확인(ROC, check_thresh_hold)
+ 
+
+## 🌠Face-Detection
+
+## 🌠Face-Recognization
+
+## 🌠성능확인(ROC, check_thresh_hold)
 데이터전처리
 코드분석
 모델링
+
+## 🌠결과분석 - 피드백 및 보완점
