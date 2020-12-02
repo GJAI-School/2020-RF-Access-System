@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/dbsave/">
+        <div>
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="rfid">RFID</label>
+            <input type="text" id="rfid" name="rfid">
+        </div>
+        <div>
+            <label for="face">얼굴사진</label>
+            <input type="file" id="face" name="face" accept="image/*" multiple>
+        </div>
+        <div>
+            <label for="vein">정맥사진</label>
+            <input type="file" id="vein" name="vein" accept="image/*">
+        </div>
+        <input type="submit">
+    </form>
+</body>
+</html>

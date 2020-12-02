@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+          width: 100%;
+          border: 1px solid #444444;
+          border-collapse: collapse;
+        }
+        th, td {
+          border: 1px solid #444444;
+          padding: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <h1>전자출입명부 통합관리시스템</h1>
+    <!-- <button onclick="add_row()">행 추가하기</button> -->
+    <!-- <button onclick="delete_row()">행 삭제하기</button> -->
+    <table id='mng-table'>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>RFcode</th>
+                <th>temperature</th>
+                <th>FaceCheck</th>
+                <th>VeinCheck</th>
+            </tr>
+        </thead>
+        <tbody id='mng-tbody'>
+            <!-- <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Dolor</td>
+                <td>asdfb</td>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Dolor</td>
+            </tr> -->
+            {% for row in history %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.date|date:"Y-m-d" }}</td>
+                <td>{{ row.date|date:"H:i:s" }}</td>
+                <td>{{ row.rfid.rfid }}</td>
+                <td>{{ row.temp }}</td>
+                <td>{{ row.face_check }}</td>
+                <td>{{ row.vein_check }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <script>
+
+        function add_row(json) {
+            var table = document.getElementById('mng-table');
+            //var totalRowCnt = table.tBodies[0].rows.length;
+
+            var now = new Date();
+            var nowDate = now.getFullYear() + '-' + 
+                         leadingZeros((now.getMonth()+1), 2) + '-' + 
+                         leadingZeros(now.getDate());
+            var nowTime = leadingZeros(now.getHours(), 2) + ':' + 
+                         leadingZeros(now.getMinutes(), 2) + ':' + 
+                         leadingZeros(now.getSeconds(), 2);
+            var mng_tbody = document.getElementById('mng-tbody');
+            // var row = mng_tbody.insertRow(0); // 상단에 추가
+            var row = mng_tbody.insertRow( mng_tbody.rows.length ); // 하단에 추가
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            
+            cell1.innerHTML = json.no;
+            cell2.innerHTML = nowDate; // 변수 값 
+            cell3.innerHTML = nowTime; // 변수 값
+            cell4.innerHTML = json.rfid
+            cell5.innerHTML = json.temp
+            cell6.innerHTML = json.face_check
+            cell7.innerHTML = json.vein_check
+            
+            
+        }
+
+        function delete_row() {
+            var mng_tbody = document.getElementById('mng-tbody');
+            if (mng_tbody.rows.length < 1) return;
+            // mng_tbody.deleteRow(0); // 상단부터 삭제
+            mng_tbody.deleteRow(mng_tbody.rows.length-1 ); // 하단부터 삭제
+        }
+
+        function leadingZeros(n, digits) {
+            var zero = '';
+            n = n.toString();
+
+            if (n.length < digits) {
+                for (i = 0; i < digits - n.length; i++)
+                zero += '0';
+            }
+            return zero + n;
+            }
+
+        
+        setInterval(ajax, 2*1000)
+        function ajax(){
+
+            $.ajax({
+                url: "http://192.168.137.227:8000/json_load", //===========================================
+                type: 'GET',
+                data: 1,
+              
+            })
+            // 요청이 성공하면 받은 데이터를 done() 메소드로 전달
+            .done(function(json) {
+                    var table = document.getElementById('mng-table');
+                    var totalRowCnt = table.tBodies[0].rows.length;
+                    console.log(totalRowCnt)
+                    console.log(json['no'])
+                    if(totalRowCnt < json['no']){
+                        add_row(json)
+                    }
+            })
+
+            // 요청이 실패하면 오류와 상태 정보가 fail() 메소드로 전달
+            .fail(function(xhr, status, errorThrown){
+                console.log('error')
+            })}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>일자</th>
+                    <th>연번</th>
+                    <th>RF번호</th>
+                    <th>안면인식</th>
+                    <th>열정보</th>
+                    <th>정맥인식</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for row in history %}
+                <tr>
+                    <td>{{row.date}}</td>
+                    <td>{{row.id}}</td>
+                    <td>{{row.rfid.rfid}}</td>
+                    <td>{{row.face_check}}</td>
+                    <td>{{row.temp}}</td>
+                    <td>{{row.vein_check}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    
+</body>
+</html>
