@@ -17,15 +17,15 @@
 
 
 ## 🌠프로젝트 프로세스
-![image](https://user-images.githubusercontent.com/58651942/100843034-19212d00-34bd-11eb-94d4-df837cf0e943.png)
+![image](https://user-images.githubusercontent.com/58651942/100871544-ce66db80-34e3-11eb-91f3-db4dc02a8f27.png)
+
 
 
 ## 🌠프로젝트 과정
 - 프로젝트는 두 팀이 함께 협업했음
 - 우리팀(어바웃타임)은 얼굴 인식과 전자출입명부 부분을 맡아서 진행함
 
-![image](https://user-images.githubusercontent.com/58651942/100845936-440d8000-34c1-11eb-85aa-9cba58098897.png)
-
+![image](https://user-images.githubusercontent.com/58651942/100871613-e50d3280-34e3-11eb-85b1-a912fa4d6216.png)
 
 ## 🌠프로젝트 일정
 ![image](https://user-images.githubusercontent.com/58651942/100842919-ea0abb80-34bc-11eb-88e7-7cb78b44db6b.png)
@@ -39,12 +39,13 @@
 
 ## 🌠Face-Recognization Modeling
 
-![image](https://user-images.githubusercontent.com/58651942/100844201-df512600-34be-11eb-83dc-7e74b44e19f6.png)
+![image](https://user-images.githubusercontent.com/58651942/100871683-040bc480-34e4-11eb-8a14-d7322926b958.png)
+
 
 ## 🌠성능확인(ROC, check_thresh_hold)
 - RF access system의 얼굴 인식 모델로 `facenet_abouttime`을 사용</br>
 
-![image](https://user-images.githubusercontent.com/58651942/100843333-8cc33a00-34bd-11eb-81ac-6ae026ee04ba.png)
+![image](https://user-images.githubusercontent.com/58651942/100871762-1f76cf80-34e4-11eb-9686-1d2c48cf5c21.png)
 
 ## 🌠전자출입명부
 ![image](https://user-images.githubusercontent.com/58651942/100846221-98b0fb00-34c1-11eb-8ed4-e4d413df847a.png)
