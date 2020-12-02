@@ -4,9 +4,9 @@
 
 
 ### Folder 정보 
--  Codes - 모든 평가 관련 코드, threshold tuning 코드, output 결과물이 들어있음
+-  tests - 모든 평가 관련 코드, threshold tuning 코드, output 결과물이 들어있음
 
-    - Codes 안에 들어 있는 `[Eval]`, `[Tuning]` 파일들은 모두 facenet을 이용해서 구한 것임
+    - tests 안에 들어 있는 `[Eval]`, `[Tuning]` 파일들은 모두 facenet을 이용해서 구한 것임
     - `[Tuning]` - threshold를 튜닝하는 코드. k-fold 사용.
     - 6000, 10000이라고 쓴 부분은 거리를 잰 pairs 개수 (예를 들어, 6000의 경우 같은 사람 3000 pairs와 다른 사람 3000 pairs를 가지고 거리를 쟀음)
 
