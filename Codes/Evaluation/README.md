@@ -11,7 +11,7 @@
     - 6000, 10000이라고 쓴 부분은 거리를 잰 pairs 개수 (예를 들어, 6000의 경우 같은 사람 3000 pairs와 다른 사람 3000 pairs를 가지고 거리를 쟀음)
 
 - eval_per_model - 모델에 따라 성능 확인한 결과(facenet, inception, mobilenet, resnet, facenet_abouttime)
-    - <u>deepface 폴더의 하위 폴더인 models 폴더에</u> `facenet2.h5`, `inception_v2.h5`, `mobilenet_v2.h5`, `renset_50-2.h5`<u>를 넣고 돌려야 함. 깃헙 용량때문에 못 올림. 모델은 전부 구글 드라이브에 있음.</u>
+    - **deepface 폴더의 하위 폴더인 models 폴더에 `facenet2.h5`, `inception_v2.h5`, `mobilenet_v2.h5`, `renset_50-2.h5`를 넣고 돌려야 함. 깃헙 용량때문에 못 올림. 모델은 전부 구글 드라이브에 있음.**
 
 - deepface - 이 안에 있는 파일 중 DeepFace.py만 일부 수정해서 사용했음
 
